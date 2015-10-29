@@ -1,0 +1,67 @@
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <h1 class="page-header">User List
+                <small>User listez !</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="../index.html">Accueil</a></li>
+                <li class="active">User List</li>
+            </ol>
+        </div>
+
+    </div>
+    <!--<div ng-controller="Hello">-->
+    <div>
+        <br />
+        Search: <input type="text" ng-model="search.$">	
+        <br /><br />
+        <table class="table">
+            <thead>
+                <td>
+                    <b>Id</b>
+                </td>
+                <td>
+                    <b>User Name</b>
+                </td>
+                <td>
+                    <b>Password</b>
+                </td>
+                <td>
+                    <b>First Name</b>
+                </td>
+                <td>
+                    <b>Last Name</b>
+                </td>
+                <td>
+                    <b>Adress</b>
+                </td>
+            </thead>
+            <tr ng-repeat="contact in greeting | filter:search">
+                <td>
+                    {{contact.id}} 
+                </td>
+                <td>
+                    {{contact.username}}
+                </td>
+                <td>
+                    {{contact.password}}
+                </td>
+                <td>
+                    {{contact.first_name}}
+                </td>
+                <td>
+                    {{contact.last_name}}
+                </td>
+                <td>
+                    {{contact.address}}
+                </td>
+            </tr>
+        </table>
+        
+    </div>
+
+</div>
+<!-- /.container -->

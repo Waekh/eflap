@@ -1,0 +1,66 @@
+<div class="container">
+
+    <div class="row">
+
+    <div class="col-lg-12">
+        <h1 class="page-header">Chat
+            <small>Chattez !</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="../index.html">Accueil</a></li>
+            <li class="active">Chat</li>
+        </ol>
+    </div>
+
+    </div>
+    
+    <div>
+        <table class="table">
+            <thead>
+                <td>
+                    <b>User</b>
+                </td>
+                <td>
+                    <b>Hour</b>
+                </td>
+                <td>
+                    <b>Message</b>
+                </td>
+            </thead>
+            <tr ng-repeat="contact in chat | filter:search">
+                <td>
+                    {{contact.user}}
+                </td>
+                <td>
+                    {{contact.date | date : 'HH:mm'}}
+                </td>
+                <td>
+                    {{contact.message}}
+                </td>
+            </tr>
+        </table>
+        
+    </div>
+    
+    <form ng-submit="addChat()">
+    <div class="row">
+        <div class="form-group col-lg-4">
+            <label for="input">New Message : </label>
+            <input type="text" name="login" class="form-control" id="input" ng-model="message" />
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    </form>
+        
+    <div class="form-group col-lg-4">
+        <label for="input2">Connected As : {{checkUserName}}</label>
+    </div>
+    
+    <br /><br />
+    
+    <div class="form-group col-lg-4">
+        <p>{{textCo}}</p>
+    </div>
+
+</div>
+<!-- /.container -->

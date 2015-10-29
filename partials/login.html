@@ -1,0 +1,86 @@
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <h1 class="page-header">Connexion
+                <small>Connectez vous !</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="../index.html">Accueil</a></li>
+                <li class="active">Connexion</li>
+            </ol>
+        </div>
+
+    </div>
+    <!-- /.row -->
+
+    <!--
+    <div class="row">
+        <div class="col-sm-8">
+            <h3>Entrez vos identifiants:</h3>
+
+            <form role="form" method="POST" action="#">
+                <div class="row">
+                    <div class="form-group col-lg-4">
+                        <label for="input1">Adresse e-mail</label>
+                        <input type="text" name="login" class="form-control" id="input1">
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="form-group col-lg-4">
+                        <label for="input2">Mot-de-passe</label>
+                        <input type="email" name="password" class="form-control" id="input2">
+                    </div>
+                    <div class="form-group col-lg-12">
+                        <input type="hidden" name="save" value="login">
+                        <button type="submit" class="btn btn-primary">Connexion</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    -->
+    
+    <div class="row">
+        
+        <div class="col-sm-8">
+            <h3>Entrez vos identifiants:</h3>
+                <form ng-submit="addChat()">
+                    <div class="row">
+
+                        <div class="form-group col-lg-4">
+                            <label for="input1">User Name</label>
+                            <input type="text" name="login" class="form-control" id="input1" ng-model="username" />
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="form-group col-lg-4">
+                            <label for="input2">Password</label>
+                            <input type="text" name="password" class="form-control" id="input2" ng-model="password" />
+                        </div>
+
+                        <div class="form-group col-lg-12">
+                            <!-- <input type="hidden" name="save" value="login"> -->
+                            <button ng-click="connexionContact()" class="btn btn-primary">Log In</button>
+                        </div>
+
+                    </div>
+                </form>
+        </div>
+        
+        
+        <div class="form-group col-lg-4">
+            <label for="input2">Connection Message :</label>
+            <p>{{textCo}}</p>
+        </div>
+        
+        <div class="form-group col-lg-4">
+            <label for="input2">Connected As : {{checkUserName}}</label>
+        </div>
+        
+        
+    </div>
+
+</div><!-- /.container -->
