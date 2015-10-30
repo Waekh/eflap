@@ -1,18 +1,14 @@
 /**
- * AngularJS Tutorial 1
- * @author Nick Kaye <nick.c.kaye@gmail.com>
- */
-
-/**
  * Main AngularJS Web Application
  */
 var app = angular.module('eflapESIEA', ['ngRoute']);
+// app factory (global variable) used for the username and user verification
 app.factory('UserService', function() {
 return {
   checkUserName : 'anonymous'
 };
 });
-    
+// app factory (global variable) used for to read a specified article
 app.factory('UserArticleId', function() {
 return {
     articleId : '1'
@@ -44,7 +40,7 @@ app.config(['$routeProvider', function ($routeProvider) {
 }]);
 
 /**
- * Controls the Blog
+ * Controls the Blog : We are not using this controller in the current project
  */
 app.controller('BlogCtrl', function (/* $scope, $location, $http */) {
   console.log("Blog Controller reporting for duty.");
@@ -63,7 +59,7 @@ app.controller('PageCtrl', function ($scope, $location, $http, UserService, User
     // Call the interval to refresh the chat
     $interval(callAtInterval, 1000);
     
-    // Get all the data to fill the chat at the diven interval
+    // Get all the data to fill the chat at the given interval
     function callAtInterval() 
     {
         $http.get('http://localhost:3000/chat').
@@ -97,20 +93,24 @@ app.controller('PageCtrl', function ($scope, $location, $http, UserService, User
     // Get all the data for the articles
     $http.get('http://localhost:3000/article').
         success(function(data) {
+        	// Get all the article
             $scope.articles = data;
             
+            // Search for the article that user has choosen
             var i = 0;
             while (data[i].id != $scope.articleId)
             {
                 // console.log(i);
                 i++
             }
+            // Put that article in a variable
             $scope.theArticle = data[i];
         });
     
     // Get all the data for the articles
     $http.get('http://localhost:3000/comments').
         success(function(data) {
+        	// Get all the comment then search which one are for the current article
             $scope.comments = [];
             
             var i = 0;
